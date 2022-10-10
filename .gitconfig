@@ -1,0 +1,5 @@
+[user]
+    name = arrebole
+    email = concurrent.exec@gmail.com
+[core]
+    editor = nvim
