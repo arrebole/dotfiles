@@ -10,5 +10,5 @@
 ### auto start sway
 ```bash
 export WLR_RENDERER=vulkan
-[ $(tty) = "dev/tty1" ] && exec sway
+[ $(tty) = "/dev/tty1" ] && exec sway
 ```
