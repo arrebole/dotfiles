@@ -6,3 +6,9 @@
 + [alacritty](https://github.com/alacritty/alacritty)
 + [wofi](https://hg.sr.ht/~scoopta/wofi)
 + [nvim](https://github.com/neovim/neovim)
+
+### auto start sway
+```bash
+export WLR_RENDERER=vulkan
+[ $(tty) = "dev/tty1" ] && exec sway
+```
