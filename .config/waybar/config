@@ -4,9 +4,9 @@
   "height": 24,
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["sway/window"],
-  "modules-right": ["network", "memory", "cpu", "clock"],
-  "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>"
+  "modules-right": ["tray", "network", "memory", "cpu", "clock"],
+  "tray": {
+    "spacing": 10
   },
   "clock": {
     "format-alt": "{%H:%M}"
