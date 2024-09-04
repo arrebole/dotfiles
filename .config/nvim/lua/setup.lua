@@ -5,7 +5,19 @@ require('Comment').setup()
 require('nvim-web-devicons').setup()
 
 -- 启用文件浏览器
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  -- 禁用 netrw，这通常与 Nvim-Tree 冲突
+  disable_netrw = true,
+  hijack_netrw = true,
+  open_on_tab = false,
+  hijack_cursor = false,
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+    ignore_list = {}
+  },
+})
 
 -- 状态栏
 require("lualine").setup()
@@ -33,56 +45,29 @@ require('bufferline').setup({
 })
 
 -- ----------------------------------------
+
 -- 语言服务器管理器
 require('mason').setup()
 
-
--- 语言服务器配置
-local lspconfig = require('lspconfig')
-
--- C语言服务器配置
-lspconfig.clangd.setup({
-  capabilities = capabilities,
-})
-
--- python 语言服务器配置
-lspconfig.pyright.setup({
-  capabilities = capabilities,
-})
-
--- javascript 语言服务器
-lspconfig.tsserver.setup({
-  capabilities = capabilities,
-})
-
--- lua 语言服务器
-lspconfig.sumneko_lua.setup({
-  capabilities = capabilities,
-})
-
--- ----------------------------------------
 -- cmp 配置
 local cmp = require('cmp')
-
--- Add additional capabilities supported by nvim-cmp
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
-
--- cmp 配置
 cmp.setup({
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  }),
-  sources = cmp.config.sources(
-  {
-    { name = 'nvim_lsp' },
+  mapping = {
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- 回车确认补全
   },
-  {
-    { name = 'buffer' },
-  })
+  sources = {
+    { name = 'nvim_lsp' }, -- LSP 补全
+    { name = 'buffer' }, -- 当前缓冲区补全
+    { name = 'luasnip' }, -- 代码片段补全
+  }
+})
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- javascript 语言服务器
+require('lspconfig').tsserver.setup({
+  capabilities = capabilities,
 })

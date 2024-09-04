@@ -21,17 +21,9 @@ require('packer').startup(function()
 
   -- Autocompletion plugin 自动补全插件
   use({
-    'hrsh7th/nvim-cmp',
-  })
-
-  -- 
-  use({
-    'hrsh7th/cmpp-buffer'
-  })
-
-  -- LSP source for nvim-cmp lsp使用与自动补全
-  use({
-    'hrsh7th/cmp-nvim-lsp'
+    'hrsh7th/nvim-cmp', -- 主补全插件
+    'hrsh7th/cmpp-buffer', -- 从缓冲区中进行补全
+    'hrsh7th/cmp-nvim-lsp', -- LSP 补全
   })
 
   -- 代码注释功能
