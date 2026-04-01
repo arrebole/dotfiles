@@ -1,6 +1,9 @@
 # 增加用户 PATH 环境变量
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# ls 颜色环境变量
+export LS_COLORS="$(vivid generate molokai)"
+
 # 加载 zsh 包管理
 source /home/developer/.local/share/zinit/zinit.git/zinit.zsh
 
@@ -17,13 +20,18 @@ zinit ice lucid wait='0' atinit='zpcompinit'
 zinit light zsh-users/zsh-syntax-highlighting
 
 # git 插件
-zinit ice lucid wait='1'
+zinit ice wait'0' lucid
 zinit snippet OMZP::git
 
 # mvn 
-zinit ice wait blockf
+zinit ice wait'0' lucid
 zinit snippet OMZP::nvm
 
-# 主题
-zinit ice pick"async.zsh" src"pure.zsh"
-zinit light sindresorhus/pure
+# shell 信息前缀
+# starship preset pure-preset -o ~/.config/starship.toml
+eval "$(starship init zsh)"
+
+# alias
+# ls 输出默认使用颜色
+alias ls='ls --color=tty'
+alias ll='ls -la --color=tty'
