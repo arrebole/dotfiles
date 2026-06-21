@@ -2,6 +2,8 @@
 
 # 增加用户 PATH 环境变量
 export $HOME/.local/bin:/usr/local/bin:$PATH
+# ls 颜色环境变量
+export LS_COLORS="$(vivid generate molokai)"
 
 ############ zsh 配置 ###########################
 
@@ -22,9 +24,6 @@ setopt HIST_IGNORE_DUPS
 
 ############# zsh 插件配置 ################
 
-# ls 颜色环境变量
-export LS_COLORS="$(vivid generate molokai)"
-
 # 加载 zsh 包管理
 source /home/developer/.local/share/zinit/zinit.git/zinit.zsh
 
@@ -44,15 +43,16 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit ice wait'0' lucid
 zinit snippet OMZP::git
 
-# mvn 
-zinit ice wait'0' lucid
-zinit snippet OMZP::nvm
+# 加载异步库 (Pure主题实现非阻塞提示符所必需的依赖)
+zinit ice wait"0a" lucid
+zinit light mafredri/zsh-async
 
-# shell 信息前缀
-# starship preset pure-preset -o ~/.config/starship.toml
-eval "$(starship init zsh)"
+# 安装并加载 Pure 主题
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
 
-# alias
+############ alias ###################
+
 # ls 输出默认使用颜色
 alias ls='ls --color=tty'
 alias ll='ls -la --color=tty'
