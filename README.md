@@ -1,5 +1,3 @@
-## my linux dotfiles
-
 ### System Components
 + [sway](https://github.com/swaywm/sway)
 + [waybar](https://github.com/Alexays/Waybar)
