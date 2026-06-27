@@ -1,9 +1,6 @@
 # 增加用户 PATH 环境变量
 export PATH=$HOME/.local/share/npm/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# ls 颜色环境变量
-export LS_COLORS="$(vivid generate molokai)"
-
 # zsh 历史记录配置
 HISTSIZE=1000000
 SAVEHIST=1000000
@@ -17,7 +14,7 @@ setopt HIST_FIND_NO_DUPS
 
 
 # 加载 zsh 包管理
-source /home/dev/.local/share/zinit/zinit.zsh
+source /home/dev/.local/share/zinit/zinit.git/zinit.zsh
 
 # 灰色建议
 zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
