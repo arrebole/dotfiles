@@ -13,4 +13,5 @@
 + [codex](https://github.com/openai/codex)
 + [opencode](https://github.com/anomalyco/opencode)
 + [codegraph](https://github.com/colbymchenry/codegraph)
++ [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
 + [cc-switch](https://github.com/farion1231/cc-switch)
