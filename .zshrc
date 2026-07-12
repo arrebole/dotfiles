@@ -25,7 +25,7 @@ zinit ice lucid wait='0'
 zinit light zsh-users/zsh-completions
 
 # 高亮
-zinit ice lucid wait='0' atinit='zpcompinit'
+zinit ice lucid wait='0'
 zinit light zsh-users/zsh-syntax-highlighting
 
 # shell 信息前缀
