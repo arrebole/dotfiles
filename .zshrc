@@ -12,12 +12,12 @@ setopt HIST_FIND_NO_DUPS
 
 setopt AUTOCD
 setopt NOBEEP
-setopt NUMERIC_GLOB_SORT
 
 # 补全菜单风格
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+source $HOME/.config/zsh/fzf.zsh
 source $HOME/.config/zsh/alias.zsh
 source $HOME/.config/zsh/plugins.zsh
 source /usr/share/fzf/key-bindings.zsh

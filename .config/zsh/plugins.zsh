@@ -14,16 +14,9 @@ zinit light-mode for \
 zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 
-# 补全缓存位置
-ZINIT[ZCOMPDUMP_PATH]="$HOME/.cache/zsh/zcompdump"
-
 # 下载补全插件- 提供补全规则数据
 zinit ice lucid wait='0'
 zinit light zsh-users/zsh-completions
-
-# 加载补全数据
-autoload -Uz compinit
-zicompinit
 
 # 高亮
 zinit ice lucid wait='0'
@@ -32,3 +25,8 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 # shell 信息前缀
 zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
+
+# 加载补全数据
+ZINIT[ZCOMPDUMP_PATH]="$HOME/.cache/zsh/zcompdump"
+autoload -Uz compinit
+zicompinit
