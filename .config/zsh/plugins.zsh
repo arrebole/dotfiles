@@ -1,4 +1,5 @@
 # 加载 zsh 包管理
+declare -A ZINIT
 source $HOME/.local/share/zinit/zinit.git/zinit.zsh
 
 # Load a few important annexes, without Turbo
@@ -13,13 +14,20 @@ zinit light-mode for \
 zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 
-# 补全增强
+# 补全缓存位置
+ZINIT[ZCOMPDUMP_PATH]="$HOME/.cache/zsh/zcompdump"
+
+# 下载补全插件- 提供补全规则数据
 zinit ice lucid wait='0'
 zinit light zsh-users/zsh-completions
 
+# 加载补全数据
+autoload -Uz compinit
+zicompinit
+
 # 高亮
 zinit ice lucid wait='0'
-zinit light zsh-users/zsh-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 # shell 信息前缀
 zinit ice pick"async.zsh" src"pure.zsh"

@@ -1,3 +1,5 @@
 # ls 输出默认使用颜色
-alias ls='ls --color=tty'
-alias ll='ls -la --color=tty'
+alias ls='eza --icons'
+alias ll='eza -lh --icons --git'
+alias la='eza -lah --icons --git'
+alias tree='eza --tree --icons'
