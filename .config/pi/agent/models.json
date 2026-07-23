@@ -1,0 +1,99 @@
+{
+  "providers": {
+    "deepseek": {
+      "baseUrl": "https://api.deepseek.com",
+      "api": "openai-completions",
+      "apiKey": "deepseek-apikey",
+      "models": [
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "input": ["text"],
+          "reasoning": true
+        },
+        {
+          "id": "deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "input": ["text"],
+          "reasoning": true
+        }
+      ]
+    },
+    "zhipu": {
+      "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+      "api": "anthropic-messages",
+      "apiKey": "zhipu-apikey",
+      "models": [
+        {
+          "id": "glm-5.2",
+          "name": "GLM-5.2",
+          "reasoning": true,
+          "input": ["text"]
+        }
+      ]
+    },
+    "lucen-codex": {
+      "baseUrl": "https://lucen.cc",
+      "api": "openai-responses",
+      "apiKey": "lucen-codex-apikey",
+      "models": [
+        {
+          "id": "gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "reasoning": true,
+          "input": ["text","image"],
+          "compat": {}
+        },
+        {
+          "id": "gpt-5.6-terra",
+          "name": "GPT-5.6 Terra",
+          "reasoning": true,
+          "input": ["text","image"],
+          "compat": {}
+        },
+        {
+          "id": "gpt-5.6-luna",
+          "name": "GPT-5.6 Luna",
+          "reasoning": true,
+          "input": ["text","image"],
+          "compat": {}
+        }
+      ]
+    },
+    "lucen-cc": {
+      "baseUrl": "https://lucen.cc",
+      "api": "anthropic-messages",
+      "apiKey": "lucen-cc-apikey",
+      "models": [
+        {
+          "id": "claude-fable-5",
+          "name": "Fable-5",
+          "reasoning": true,
+          "input": ["text","image"],
+          "compat": {}
+        },
+        {
+          "id": "claude-opus-4-8",
+          "name": "Opus-4.8",
+          "reasoning": true,
+          "input": ["text","image"],
+          "compat": {}
+        },
+        {
+          "id": "claude-sonnet-5",
+          "name": "Sonnet-5",
+          "reasoning": true,
+          "input": ["text","image"],
+          "compat": {}
+        },
+        {
+          "id": "claude-haiku-4-5",
+          "name": "haiku-4.5",
+          "reasoning": true,
+          "input": ["text","image"],
+          "compat": {}
+        }
+      ]
+    }
+  }
+}
