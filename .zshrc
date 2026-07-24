@@ -17,8 +17,9 @@ setopt NOBEEP
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-source $HOME/.config/zsh/fzf.zsh
-source $HOME/.config/zsh/alias.zsh
-source $HOME/.config/zsh/plugins.zsh
+source $XDG_CONFIG_HOME/zsh/fzf.zsh
+source $XDG_CONFIG_HOME/zsh/alias.zsh
+source $XDG_CONFIG_HOME/zsh/plugins.zsh
+source $XDG_CONFIG_HOME/zsh/p10k.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh

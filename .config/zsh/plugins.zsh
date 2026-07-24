@@ -22,9 +22,9 @@ zinit light zsh-users/zsh-completions
 zinit ice lucid wait='0'
 zinit light zdharma-continuum/fast-syntax-highlighting
 
-# shell 信息前缀
-zinit ice pick"async.zsh" src"pure.zsh"
-zinit light sindresorhus/pure
+# shell 主题
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 
 # 加载补全数据
 ZINIT[ZCOMPDUMP_PATH]="$HOME/.cache/zsh/zcompdump"
