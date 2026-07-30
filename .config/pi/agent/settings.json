@@ -1,0 +1,11 @@
+{
+    "packages": [
+        {
+            "source": "git:github.com/arrebole/dotagent",
+            "extensions": [
+                "extensions/websearch/index.ts",
+                "extensions/subagent/index.ts"
+            ]
+        }
+    ]
+}
