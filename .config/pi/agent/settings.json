@@ -1,11 +1,13 @@
 {
-    "packages": [
-        {
-            "source": "git:github.com/arrebole/dotagent",
-            "extensions": [
-                "extensions/websearch/index.ts",
-                "extensions/subagent/index.ts"
-            ]
-        }
-    ]
+  "packages": [
+    {
+      "source": "git:github.com/arrebole/dotagent@pi",
+      "extensions": [
+        "extensions/websearch/index.ts",
+        "extensions/subagent/index.ts"
+      ],
+      "skills": [],
+      "prompts": []
+    }
+  ]
 }
