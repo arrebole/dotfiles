@@ -1,4 +1,5 @@
 {
+  "tuiMode": "fullscreen",
   "packages": [
     {
       "source": "git:github.com/arrebole/dotagent@pi",
