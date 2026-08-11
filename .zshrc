@@ -13,13 +13,6 @@ setopt HIST_FIND_NO_DUPS
 setopt AUTOCD
 setopt NOBEEP
 
-# Linux 虚拟控制台通常没有 Nerd Font，提示符改用纯 ASCII 字符。
-if [[ $TERM == linux || $TTY == /dev/tty[0-9]* ]]; then
-  typeset -g ZSH_USE_ASCII_PROMPT=1
-else
-  typeset -g ZSH_USE_ASCII_PROMPT=0
-fi
-
 # 补全菜单风格
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -28,6 +21,6 @@ source $XDG_CONFIG_HOME/zsh/fzf.zsh
 source $XDG_CONFIG_HOME/zsh/alias.zsh
 source $XDG_CONFIG_HOME/zsh/plugins.zsh
 
-source $XDG_CONFIG_HOME/zsh/p10k.zsh
+source $XDG_CONFIG_HOME/zsh/theme.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
