@@ -46,7 +46,6 @@
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     status                  # exit code of the last command
-    command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
     direnv                  # direnv status (https://direnv.net/)
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
@@ -900,7 +899,7 @@
   # Custom icon.
   # typeset -g POWERLEVEL9K_CPU_ARCH_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
-  ##################################[ context: user@hostname ]##################################
+  ####################################[ context: hostname ]#####################################
   # Context color when running with privileges.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=178
   # Context color in SSH without privileges.
@@ -908,12 +907,12 @@
   # Default context color (no privileges, no SSH).
   typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=180
 
-  # Context format when running with privileges: bold user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%B%n@%m'
-  # Context format when in SSH without privileges: user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE='%n@%m'
-  # Default context format (no privileges, no SSH): user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n@%m'
+  # 提权运行时的上下文格式：粗体主机名。
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%B%m'
+  # SSH 登录时的上下文格式：主机名。
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE='%m'
+  # 本地默认上下文格式：主机名。
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%m'
 
   # Don't show context unless running with privileges or in SSH.
   # Tip: Remove the next line to always show context.
