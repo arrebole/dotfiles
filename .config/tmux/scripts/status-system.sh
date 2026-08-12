@@ -75,5 +75,7 @@ rate() {
     }'
 }
 
-printf 'CPU %s%%  MEM %s  NET ↓ %s/s ↑ %s/s' \
+# Nerd Font: CPU, memory, and compact network throughput glyphs.
+printf '󰻠 %s%%  󰍛 %s  󰈀 ↓%s ↑%s/s' \
     "$cpu" "$mem" "$(rate "$rx_rate")" "$(rate "$tx_rate")"
+
