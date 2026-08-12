@@ -1,92 +1,63 @@
 * {
-  border: none;
-  border-radius: 0;
-  font-family: "Ubuntu Nerd Font";
-  font-size: 13px;
-  min-height: 0;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "CaskaydiaCove Nerd Font", "Adwaita Sans", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0;
 }
 
 window#waybar {
-  background: transparent;
-  color: white;
-}
-
-#window {
-  font-weight: bold;
-  font-family: "Ubuntu";
+    background: rgba(24, 26, 30, 0.28);
+    color: #e8e8e8;
+    border-bottom: 1px solid #3b3e45;
 }
 
 #workspaces button {
-  padding: 0 5px;
-  background: transparent;
-  color: white;
-  border-top: 2px solid transparent;
+    min-width: 32px;
+    padding: 0 8px;
+    color: #aeb2ba;
+    background: transparent;
+    box-shadow: inset 0 -2px transparent;
 }
 
-#workspaces button.focused {
-  color: #c9545d;
-  border-top: 2px solid #c9545d;
+#workspaces button:hover {
+    color: #ffffff;
+    background: #30333a;
 }
 
-#mode {
-  background: #64727D;
-  border-bottom: 3px solid white;
+#workspaces button.active {
+    color: #ffffff;
+    background: #343840;
+    box-shadow: inset 0 -2px #66b3a6;
 }
 
-#clock,
-#battery,
+#workspaces button.urgent {
+    color: #ffffff;
+    box-shadow: inset 0 -2px #df6b73;
+}
+
+#window {
+    padding: 0 14px;
+    color: #d6d8dc;
+}
+
+#tray,
+#network,
 #cpu,
 #memory,
-#network,
-#pulseaudio,
-#custom-spotify,
-#tray,
-#mode {
-  padding: 0 3px;
-  margin: 0 2px;
-}
-
 #clock {
-  font-weight: bold;
+    padding: 0 10px;
+    border-left: 1px solid #34373d;
 }
 
-#battery icon {
-  color: red;
-}
+#network { color: #76b7e5; }
+#cpu { color: #78c49a; }
+#memory { color: #d5a768; }
+#clock { color: #f0f0f0; font-weight: 600; }
 
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: black;
-  }
+tooltip {
+    background: #24262b;
+    color: #eeeeee;
+    border: 1px solid #4a4e56;
 }
-
-#battery.warning:not(.charging) {
-  color: white;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#network.disconnected {
-  background: #f53c3c;
-}
-
-#custom-spotify {
-  color: rgb(102, 220, 105);
-}
-
-
-/* #workspaces {
-    padding: 0 5px;
-}
-#battery.charging {}
-#battery {}
-#cpu {}
-#memory {}
-#network {}
-#pulseaudio {}
-#pulseaudio.muted {}
-#tray {} */

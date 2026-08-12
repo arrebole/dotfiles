@@ -1,0 +1,88 @@
+[window]
+decorations = "None"
+opacity = 0.72
+blur = false
+padding = { x = 14, y = 12 }
+dynamic_padding = true
+dynamic_title = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 11.5
+
+[font.normal]
+family = "CaskaydiaCove Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "CaskaydiaCove Nerd Font"
+style = "SemiBold"
+
+[font.italic]
+family = "CaskaydiaCove Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "CaskaydiaCove Nerd Font"
+style = "SemiBold Italic"
+
+[colors.primary]
+background = "#15171a"
+foreground = "#d8dadd"
+dim_foreground = "#8b8f97"
+bright_foreground = "#f4f5f6"
+
+[colors.cursor]
+text = "CellBackground"
+cursor = "#d8dadd"
+
+[colors.vi_mode_cursor]
+text = "CellBackground"
+cursor = "#8ec8ba"
+
+[colors.selection]
+text = "CellForeground"
+background = "#3a4148"
+
+[colors.normal]
+black = "#202328"
+red = "#d4777e"
+green = "#8fbe8f"
+yellow = "#d0ad72"
+blue = "#7ca8c9"
+magenta = "#ad91c2"
+cyan = "#79b8ae"
+white = "#c9ccd1"
+
+[colors.bright]
+black = "#626872"
+red = "#e28a91"
+green = "#a3cfa3"
+yellow = "#dfbf86"
+blue = "#91bbd8"
+magenta = "#c0a4d1"
+cyan = "#8dcabf"
+white = "#f0f1f2"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+blink_interval = 650
+blink_timeout = 0
+unfocused_hollow = true
+thickness = 0.15
+
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+[terminal]
+shell = { program = "/usr/bin/zsh", args = ["-l"] }
+
+[env]
+TERM = "alacritty"

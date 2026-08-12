@@ -1,0 +1,53 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 0,
+  "modules-left": [
+    "niri/workspaces"
+  ],
+  "modules-center": [
+    "niri/window"
+  ],
+  "modules-right": [
+    "tray",
+    "network",
+    "cpu",
+    "memory",
+    "clock"
+  ],
+  "niri/workspaces": {
+    "format": "{value}",
+    "all-outputs": true
+  },
+  "niri/window": {
+    "format": "{title}",
+    "max-length": 80,
+    "rewrite": {
+      "": "Desktop"
+    }
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "network": {
+    "format-ethernet": "󰈀  {ipaddr}",
+    "format-wifi": "󰖩  {essid}",
+    "format-disconnected": "󰖪  Offline",
+    "tooltip-format": "{ifname}  {ipaddr}/{cidr}"
+  },
+  "cpu": {
+    "format": "󰍛  {usage}%",
+    "interval": 2
+  },
+  "memory": {
+    "format": "󰘚  {percentage}%",
+    "interval": 2
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%Y-%m-%d  %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  }
+}
