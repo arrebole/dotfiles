@@ -19,6 +19,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 source $XDG_CONFIG_HOME/zsh/fzf.zsh
 source $XDG_CONFIG_HOME/zsh/alias.zsh
+source $XDG_CONFIG_HOME/zsh/proxy.zsh
 source $XDG_CONFIG_HOME/zsh/plugins.zsh
 
 source $XDG_CONFIG_HOME/zsh/theme.zsh
