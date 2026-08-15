@@ -2,7 +2,7 @@
   "providers": {
     "api.deepseek.com/dev": {
       "baseUrl": "https://api.deepseek.com",
-      "api": "openai-completions",
+      "api": "openai-responses",
       "models": [
         {
           "id": "deepseek-v4-pro",
