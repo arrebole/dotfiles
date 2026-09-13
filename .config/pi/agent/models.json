@@ -1,12 +1,12 @@
 {
   "providers": {
     "api.deepseek.com/dev": {
-      "baseUrl": "https://api.deepseek.com",
-      "api": "openai-responses",
+      "baseUrl": "https://api.deepseek.com/anthropic",
+      "api": "anthropic-messages",
       "models": [
         {
           "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro",
+          "name": "DeepSeek-V4-Pro",
           "input": [
             "text"
           ],
@@ -15,8 +15,8 @@
           "maxTokens": 384000
         },
         {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek V4 Flash",
+          "id": "deepseek-flash",
+          "name": "DeepSeek-V4.1-Flash",
           "input": [
             "text"
           ],
@@ -26,10 +26,31 @@
         }
       ]
     },
+
     "open.bigmodel.cn/dev": {
       "baseUrl": "https://open.bigmodel.cn/api/anthropic",
       "api": "anthropic-messages",
       "models": [
+        {
+          "id": "glm-5.3",
+          "name": "GLM-5.3",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072
+        },
+        {
+          "id": "glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072
+        },
         {
           "id": "glm-5.2",
           "name": "GLM-5.2",
@@ -39,142 +60,10 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 131072
-        },
-        {
-          "id": "glm-5-turbo",
-          "name": "GLM-5-Turbo",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 200000,
-          "maxTokens": 131072
-        },
-        {
-          "id": "glm-4.7",
-          "name": "GLM-4.7",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 200000,
-          "maxTokens": 131072
-        },
-        {
-          "id": "glm-4.7-flash",
-          "name": "GLM-4.7 Flash",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 200000,
-          "maxTokens": 131072
-        },
-        {
-          "id": "glm-4.5-air",
-          "name": "GLM-4.5 Air",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 128000,
-          "maxTokens": 98304
         }
       ]
     },
-    "dashscope.aliyuncs.com/dev": {
-      "api": "openai-completions",
-      "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-      "models": [
-        {
-          "id": "qwen3.7-max",
-          "name": "Qwen3.7 Max",
-          "input": [
-            "text"
-          ],
-          "reasoning": true,
-          "contextWindow": 1000000,
-          "maxTokens": 65536,
-          "compat": {
-            "thinkingFormat": "qwen",
-            "supportsReasoningEffort": false,
-            "requiresReasoningContentOnAssistantMessages": true
-          }
-        },
-        {
-          "id": "qwen3.7-plus",
-          "name": "Qwen3.7 Plus",
-          "input": [
-            "text",
-            "image"
-          ],
-          "reasoning": true,
-          "contextWindow": 1000000,
-          "maxTokens": 65536,
-          "compat": {
-            "thinkingFormat": "qwen",
-            "supportsReasoningEffort": false,
-            "requiresReasoningContentOnAssistantMessages": true
-          }
-        },
-        {
-          "id": "qwen3.7-flash",
-          "name": "Qwen3.7 Flash",
-          "input": [
-            "text",
-            "image"
-          ],
-          "reasoning": true,
-          "contextWindow": 1000000,
-          "maxTokens": 65536,
-          "compat": {
-            "thinkingFormat": "qwen",
-            "supportsReasoningEffort": false,
-            "requiresReasoningContentOnAssistantMessages": true
-          }
-        },
-        {
-          "id": "qwen3-coder-plus",
-          "name": "Qwen3 Coder Plus",
-          "input": [
-            "text"
-          ],
-          "reasoning": true,
-          "contextWindow": 1000000,
-          "maxTokens": 65536,
-          "compat": {
-            "thinkingFormat": "qwen",
-            "supportsReasoningEffort": false,
-            "requiresReasoningContentOnAssistantMessages": true
-          }
-        },
-        {
-          "id": "qwen3-vl-plus",
-          "name": "Qwen3 VL Plus",
-          "input": [
-            "text",
-            "image"
-          ],
-          "reasoning": true,
-          "contextWindow": 1000000,
-          "maxTokens": 65536,
-          "compat": {
-            "thinkingFormat": "qwen",
-            "supportsReasoningEffort": false,
-            "requiresReasoningContentOnAssistantMessages": true
-          }
-        },
-        {
-          "id": "qwen-long",
-          "name": "Qwen-Long",
-          "input": [
-            "text"
-          ],
-          "contextWindow": 10000000,
-          "maxTokens": 32768
-        }
-      ]
-    },
+    
     "api.moonshot.cn/dev": {
       "baseUrl": "https://api.moonshot.cn/v1",
       "api": "openai-completions",
@@ -187,7 +76,7 @@
             "text",
             "image"
           ],
-          "contextWindow": 1048576,
+          "contextWindow": 1000000,
           "maxTokens": 131072,
           "thinkingLevelMap": {
             "off": null,
@@ -208,61 +97,59 @@
             "requiresReasoningContentOnAssistantMessages": true,
             "deferredToolsMode": "kimi"
           }
-        },
-        {
-          "id": "kimi-k2.7-code",
-          "name": "Kimi K2.7 Code",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 262144,
-          "maxTokens": 262144,
-          "thinkingLevelMap": {
-            "off": null,
-            "low": "low",
-            "high": "high",
-            "max": "max"
-          },
-          "compat": {
-            "supportsStore": false,
-            "supportsDeveloperRole": false,
-            "supportsReasoningEffort": true,
-            "maxTokensField": "max_tokens",
-            "supportsStrictMode": false,
-            "thinkingFormat": "openai",
-            "requiresReasoningContentOnAssistantMessages": true
-          }
-        },
-        {
-          "id": "kimi-k2.7-code-highspeed",
-          "name": "Kimi K2.7 Code HighSpeed",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 262144,
-          "maxTokens": 262144,
-          "thinkingLevelMap": {
-            "off": null,
-            "low": "low",
-            "high": "high",
-            "max": "max"
-          },
-          "compat": {
-            "supportsStore": false,
-            "supportsDeveloperRole": false,
-            "supportsReasoningEffort": true,
-            "maxTokensField": "max_tokens",
-            "supportsStrictMode": false,
-            "thinkingFormat": "openai",
-            "requiresReasoningContentOnAssistantMessages": true
-          }
         }
       ]
     },
+
+    "dashscope.aliyuncs.com/dev": {
+      "api": "openai-completions",
+      "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "models": [
+        {
+          "id": "qwen3.8-max",
+          "name": "Qwen3.8 Max",
+          "input": [
+            "text",
+            "image"
+          ],
+          "reasoning": true,
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "compat": {
+            "thinkingFormat": "qwen",
+            "supportsReasoningEffort": false,
+            "requiresReasoningContentOnAssistantMessages": true
+          }
+        },
+        {
+          "id": "qwen3.8-flash",
+          "name": "Qwen3.8 Flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "reasoning": true,
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "compat": {
+            "thinkingFormat": "qwen",
+            "supportsReasoningEffort": false,
+            "requiresReasoningContentOnAssistantMessages": true
+          }
+        },
+        {
+          "id": "qwen3-coder-next",
+          "name": "Qwen3 Coder Next",
+          "input": [
+            "text"
+          ],
+          "reasoning": false,
+          "contextWindow": 262144,
+          "maxTokens": 65536
+        }
+      ]
+    },
+
     "api.xiaomimimo.com/dev": {
       "baseUrl": "https://api.xiaomimimo.com/v1",
       "api": "openai-completions",
@@ -299,6 +186,7 @@
         }
       ]
     },
+
     "api.minimaxi.com/dev": {
       "baseUrl": "https://api.minimaxi.com/anthropic",
       "api": "anthropic-messages",
@@ -313,78 +201,17 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 131072
-        },
-        {
-          "id": "MiniMax-M2.7",
-          "name": "MiniMax-M2.7",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 204800,
-          "maxTokens": 131072
-        },
-        {
-          "id": "MiniMax-M2.7-highspeed",
-          "name": "MiniMax-M2.7 HighSpeed",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 204800,
-          "maxTokens": 131072
         }
       ]
     },
-    "lucen.cc/codex": {
-      "baseUrl": "https://lucen.cc",
-      "api": "openai-responses",
-      "models": [
-        {
-          "id": "gpt-5.6-sol",
-          "name": "GPT-5.6 Sol",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "compat": {}
-        },
-        {
-          "id": "gpt-5.6-terra",
-          "name": "GPT-5.6 Terra",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "compat": {}
-        },
-        {
-          "id": "gpt-5.6-luna",
-          "name": "GPT-5.6 Luna",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "compat": {}
-        }
-      ]
-    },
-    "lucen.cc/cc": {
-      "baseUrl": "https://lucen.cc",
+
+    "fastaitoken.com/cc": {
+      "baseUrl": "https://www.fastaitoken.com",
       "api": "anthropic-messages",
       "models": [
-        {
+                {
           "id": "claude-fable-5",
-          "name": "Fable-5",
+          "name": "Claude Fable 5",
           "reasoning": true,
           "input": [
             "text",
@@ -392,11 +219,20 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "compat": {}
+          "thinkingLevelMap": {
+            "off": null,
+            "xhigh": "xhigh",
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true,
+            "allowEmptySignature": true
+          }
         },
         {
           "id": "claude-opus-5",
-          "name": "Opus-5",
+          "name": "Claude Opus 5",
           "reasoning": true,
           "input": [
             "text",
@@ -404,17 +240,20 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "compat": {
-            "forceAdaptiveThinking": true
-          },
           "thinkingLevelMap": {
+            "off": null,
             "xhigh": "xhigh",
             "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true,
+            "allowEmptySignature": true
           }
         },
         {
           "id": "claude-opus-4-8",
-          "name": "Opus-4.8",
+          "name": "Claude Opus 4.8",
           "reasoning": true,
           "input": [
             "text",
@@ -422,35 +261,19 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "compat": {
-            "forceAdaptiveThinking": true
-          },
           "thinkingLevelMap": {
             "xhigh": "xhigh",
             "max": "max"
-          }
-        },
-        {
-          "id": "claude-opus-4-7",
-          "name": "Opus-4.7",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 128000,
-          "compat": {
-            "forceAdaptiveThinking": true
           },
-          "thinkingLevelMap": {
-            "xhigh": "xhigh",
-            "max": "max"
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true,
+            "allowEmptySignature": true
           }
         },
         {
           "id": "claude-sonnet-5",
-          "name": "Sonnet-5",
+          "name": "Claude Sonnet 5",
           "reasoning": true,
           "input": [
             "text",
@@ -458,73 +281,27 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "compat": {}
-        },
-        {
-          "id": "claude-haiku-4-5",
-          "name": "haiku-4.5",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 200000,
-          "maxTokens": 64000,
-          "compat": {}
-        }
-      ]
-    },
-    "lucen.cc/glm-cc": {
-      "baseUrl": "https://lucen.cc",
-      "api": "anthropic-messages",
-      "models": [
-        {
-          "id": "glm-5-turbo",
-          "name": "GLM-5 Turbo",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 200000,
-          "maxTokens": 131072
-        },
-        {
-          "id": "glm-5.2",
-          "name": "GLM-5.2",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 131072
-        },
-        {
-          "id": "claude-opus-4-8",
-          "name": "Opus-4.8",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 128000,
-          "compat": {
-            "forceAdaptiveThinking": true
-          },
           "thinkingLevelMap": {
             "xhigh": "xhigh",
             "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true,
+            "allowEmptySignature": true
           }
         }
       ]
     },
-    "lucen.cc/gemini": {
-      "baseUrl": "https://lucen.cc",
+
+    "fastaitoken.com/codex": {
+      "baseUrl": "https://www.fastaitoken.com",
       "api": "openai-responses",
       "models": [
         {
-          "id": "gemini-3.1-pro",
-          "name": "Gemini 3.1 Pro",
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "api": "openai-responses",
           "reasoning": true,
           "input": [
             "text",
@@ -535,45 +312,10 @@
           "compat": {}
         },
         {
-          "id": "gemini-3.5-flash",
-          "name": "Gemini 3.5 Flash",
+          "id": "gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "api": "openai-responses",
           "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 128000,
-          "compat": {}
-        },
-        {
-          "id": "gemini-3.5-flash-high",
-          "name": "Gemini 3.5 Flash High",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 128000,
-          "compat": {}
-        },
-        {
-          "id": "gemini-3.5-flash-low",
-          "name": "Gemini 3.5 Flash Low",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 128000,
-          "compat": {}
-        },
-        {
-          "id": "gemini-3.1-flash-image",
-          "name": "Gemini 3.1 Flash Image",
-          "reasoning": false,
           "input": [
             "text",
             "image"
@@ -584,29 +326,34 @@
         }
       ]
     },
-    "lucen.cc/grok": {
-      "baseUrl": "https://lucen.cc",
+  
+    "openai.beststarai.com/codex": {
+      "baseUrl": "https://openai.beststarai.com/v1",
       "api": "openai-responses",
       "models": [
         {
-          "id": "grok-4.5",
-          "name": "Grok 4.5",
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "api": "openai-responses",
           "reasoning": true,
           "input": [
-            "text"
+            "text",
+            "image"
           ],
-          "contextWindow": 256000,
+          "contextWindow": 1000000,
           "maxTokens": 128000,
           "compat": {}
         },
         {
-          "id": "grok-4.3",
-          "name": "Grok 4.3",
+          "id": "gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "api": "openai-responses",
           "reasoning": true,
           "input": [
-            "text"
+            "text",
+            "image"
           ],
-          "contextWindow": 256000,
+          "contextWindow": 1000000,
           "maxTokens": 128000,
           "compat": {}
         }
