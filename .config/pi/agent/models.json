@@ -7,26 +7,50 @@
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek-V4-Pro",
+          "thinkingLevelMap": {
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true
+          },
           "input": [
             "text"
           ],
           "reasoning": true,
           "contextWindow": 1000000,
-          "maxTokens": 384000
+          "maxTokens": 384000,
+          "cost": {
+            "input": 1.32,
+            "output": 3.96,
+            "cacheRead": 0.044,
+            "cacheWrite": 0
+          }
         },
         {
           "id": "deepseek-flash",
           "name": "DeepSeek-V4.1-Flash",
+          "thinkingLevelMap": {
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true
+          },
           "input": [
-            "text"
+            "text",
+            "image"
           ],
           "reasoning": true,
           "contextWindow": 1000000,
-          "maxTokens": 384000
+          "maxTokens": 384000,
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.006,
+            "cacheWrite": 0
+          }
         }
       ]
     },
-
     "open.bigmodel.cn/dev": {
       "baseUrl": "https://open.bigmodel.cn/api/anthropic",
       "api": "anthropic-messages",
@@ -39,7 +63,13 @@
             "text"
           ],
           "contextWindow": 1000000,
-          "maxTokens": 131072
+          "maxTokens": 131072,
+          "cost": {
+            "input": 1.18220777,
+            "output": 4.13772721,
+            "cacheRead": 0.29555194,
+            "cacheWrite": 0
+          }
         },
         {
           "id": "glm-5.3-flash",
@@ -49,7 +79,13 @@
             "text"
           ],
           "contextWindow": 1000000,
-          "maxTokens": 131072
+          "maxTokens": 131072,
+          "cost": {
+            "input": 0.05911039,
+            "output": 0.20688636,
+            "cacheRead": 0.01699424,
+            "cacheWrite": 0
+          }
         },
         {
           "id": "glm-5.2",
@@ -59,11 +95,16 @@
             "text"
           ],
           "contextWindow": 1000000,
-          "maxTokens": 131072
+          "maxTokens": 131072,
+          "cost": {
+            "input": 1.18220777,
+            "output": 4.13772721,
+            "cacheRead": 0.29555194,
+            "cacheWrite": 0
+          }
         }
       ]
     },
-    
     "api.moonshot.cn/dev": {
       "baseUrl": "https://api.moonshot.cn/v1",
       "api": "openai-completions",
@@ -96,11 +137,16 @@
             "thinkingFormat": "openai",
             "requiresReasoningContentOnAssistantMessages": true,
             "deferredToolsMode": "kimi"
+          },
+          "cost": {
+            "input": 2.95551943,
+            "output": 14.77759716,
+            "cacheRead": 0.29555194,
+            "cacheWrite": 0
           }
         }
       ]
     },
-
     "dashscope.aliyuncs.com/dev": {
       "api": "openai-completions",
       "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
@@ -119,6 +165,12 @@
             "thinkingFormat": "qwen",
             "supportsReasoningEffort": false,
             "requiresReasoningContentOnAssistantMessages": true
+          },
+          "cost": {
+            "input": 1.77331166,
+            "output": 5.31993498,
+            "cacheRead": 0.22166396,
+            "cacheWrite": 2.21663957
           }
         },
         {
@@ -135,6 +187,12 @@
             "thinkingFormat": "qwen",
             "supportsReasoningEffort": false,
             "requiresReasoningContentOnAssistantMessages": true
+          },
+          "cost": {
+            "input": 0.11822078,
+            "output": 0.39899512,
+            "cacheRead": 0.0147776,
+            "cacheWrite": 0.18471996
           }
         },
         {
@@ -145,11 +203,32 @@
           ],
           "reasoning": false,
           "contextWindow": 262144,
-          "maxTokens": 65536
+          "maxTokens": 65536,
+          "cost": {
+            "input": 0.14777597,
+            "output": 0.59110389,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "tiers": [
+              {
+                "inputTokensAbove": 32768,
+                "input": 0.22166396,
+                "output": 0.88665583,
+                "cacheRead": 0,
+                "cacheWrite": 0
+              },
+              {
+                "inputTokensAbove": 131072,
+                "input": 0.36943993,
+                "output": 1.47775972,
+                "cacheRead": 0,
+                "cacheWrite": 0
+              }
+            ]
+          }
         }
       ]
     },
-
     "api.xiaomimimo.com/dev": {
       "baseUrl": "https://api.xiaomimimo.com/v1",
       "api": "openai-completions",
@@ -167,6 +246,12 @@
           "compat": {
             "requiresReasoningContentOnAssistantMessages": true,
             "thinkingFormat": "deepseek"
+          },
+          "cost": {
+            "input": 0.14,
+            "output": 0.28,
+            "cacheRead": 0.0028,
+            "cacheWrite": 0
           }
         },
         {
@@ -182,11 +267,16 @@
           "compat": {
             "requiresReasoningContentOnAssistantMessages": true,
             "thinkingFormat": "deepseek"
+          },
+          "cost": {
+            "input": 0.435,
+            "output": 0.87,
+            "cacheRead": 0.0036,
+            "cacheWrite": 0
           }
         }
       ]
     },
-
     "api.minimaxi.com/dev": {
       "baseUrl": "https://api.minimaxi.com/anthropic",
       "api": "anthropic-messages",
@@ -200,16 +290,92 @@
             "image"
           ],
           "contextWindow": 1000000,
-          "maxTokens": 131072
+          "maxTokens": 131072,
+          "cost": {
+            "input": 0.31032954,
+            "output": 1.24131816,
+            "cacheRead": 0.06206591,
+            "cacheWrite": 0,
+            "tiers": [
+              {
+                "inputTokensAbove": 524288,
+                "input": 0.62065908,
+                "output": 2.48263632,
+                "cacheRead": 0.12413182,
+                "cacheWrite": 0
+              }
+            ]
+          }
         }
       ]
     },
-
-    "fastaitoken.com/cc": {
-      "baseUrl": "https://www.fastaitoken.com",
+    "lucen.plus/codex": {
+      "baseUrl": "https://lucen.plus",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "api": "openai-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "compat": {},
+          "cost": {
+            "input": 10,
+            "output": 50,
+            "cacheRead": 1,
+            "cacheWrite": 12.5,
+            "tiers": [
+              {
+                "inputTokensAbove": 272000,
+                "input": 20,
+                "output": 75,
+                "cacheRead": 2,
+                "cacheWrite": 25
+              }
+            ]
+          }
+        },
+        {
+          "id": "gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "api": "openai-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "compat": {},
+          "cost": {
+            "input": 4,
+            "output": 20,
+            "cacheRead": 0.4,
+            "cacheWrite": 5,
+            "tiers": [
+              {
+                "inputTokensAbove": 272000,
+                "input": 8,
+                "output": 30,
+                "cacheRead": 0.8,
+                "cacheWrite": 10
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "lucen.plus/cc": {
+      "baseUrl": "https://lucen.plus",
       "api": "anthropic-messages",
       "models": [
-                {
+        {
           "id": "claude-fable-5",
           "name": "Claude Fable 5",
           "reasoning": true,
@@ -228,6 +394,12 @@
             "forceAdaptiveThinking": true,
             "supportsStrictTools": true,
             "allowEmptySignature": true
+          },
+          "cost": {
+            "input": 10,
+            "output": 50,
+            "cacheRead": 1,
+            "cacheWrite": 12.5
           }
         },
         {
@@ -249,6 +421,72 @@
             "forceAdaptiveThinking": true,
             "supportsStrictTools": true,
             "allowEmptySignature": true
+          },
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cacheRead": 0.5,
+            "cacheWrite": 6.25
+          }
+        }
+      ]
+    },
+    "fastaitoken.com/cc": {
+      "baseUrl": "https://www.fastaitoken.com",
+      "api": "anthropic-messages",
+      "models": [
+        {
+          "id": "claude-fable-5",
+          "name": "Claude Fable 5",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "thinkingLevelMap": {
+            "off": null,
+            "xhigh": "xhigh",
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true,
+            "allowEmptySignature": true
+          },
+          "cost": {
+            "input": 10,
+            "output": 50,
+            "cacheRead": 1,
+            "cacheWrite": 12.5
+          }
+        },
+        {
+          "id": "claude-opus-5",
+          "name": "Claude Opus 5",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "thinkingLevelMap": {
+            "off": null,
+            "xhigh": "xhigh",
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true,
+            "allowEmptySignature": true
+          },
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cacheRead": 0.5,
+            "cacheWrite": 6.25
           }
         },
         {
@@ -269,6 +507,12 @@
             "forceAdaptiveThinking": true,
             "supportsStrictTools": true,
             "allowEmptySignature": true
+          },
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cacheRead": 0.5,
+            "cacheWrite": 6.25
           }
         },
         {
@@ -289,11 +533,16 @@
             "forceAdaptiveThinking": true,
             "supportsStrictTools": true,
             "allowEmptySignature": true
+          },
+          "cost": {
+            "input": 2,
+            "output": 10,
+            "cacheRead": 0.2,
+            "cacheWrite": 2.5
           }
         }
       ]
     },
-
     "fastaitoken.com/codex": {
       "baseUrl": "https://www.fastaitoken.com",
       "api": "openai-responses",
@@ -309,7 +558,22 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "compat": {}
+          "compat": {},
+          "cost": {
+            "input": 10,
+            "output": 50,
+            "cacheRead": 1,
+            "cacheWrite": 12.5,
+            "tiers": [
+              {
+                "inputTokensAbove": 272000,
+                "input": 20,
+                "output": 75,
+                "cacheRead": 2,
+                "cacheWrite": 25
+              }
+            ]
+          }
         },
         {
           "id": "gpt-5.6-sol",
@@ -322,11 +586,25 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "compat": {}
+          "compat": {},
+          "cost": {
+            "input": 4,
+            "output": 20,
+            "cacheRead": 0.4,
+            "cacheWrite": 5,
+            "tiers": [
+              {
+                "inputTokensAbove": 272000,
+                "input": 8,
+                "output": 30,
+                "cacheRead": 0.8,
+                "cacheWrite": 10
+              }
+            ]
+          }
         }
       ]
     },
-  
     "openai.beststarai.com/codex": {
       "baseUrl": "https://openai.beststarai.com/v1",
       "api": "openai-responses",
@@ -342,7 +620,22 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "compat": {}
+          "compat": {},
+          "cost": {
+            "input": 10,
+            "output": 50,
+            "cacheRead": 1,
+            "cacheWrite": 12.5,
+            "tiers": [
+              {
+                "inputTokensAbove": 272000,
+                "input": 20,
+                "output": 75,
+                "cacheRead": 2,
+                "cacheWrite": 25
+              }
+            ]
+          }
         },
         {
           "id": "gpt-5.6-sol",
@@ -355,7 +648,22 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "compat": {}
+          "compat": {},
+          "cost": {
+            "input": 4,
+            "output": 20,
+            "cacheRead": 0.4,
+            "cacheWrite": 5,
+            "tiers": [
+              {
+                "inputTokensAbove": 272000,
+                "input": 8,
+                "output": 30,
+                "cacheRead": 0.8,
+                "cacheWrite": 10
+              }
+            ]
+          }
         }
       ]
     }
