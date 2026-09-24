@@ -76,7 +76,8 @@
           "name": "GLM-5.3-Flash",
           "reasoning": true,
           "input": [
-            "text"
+            "text",
+            "image"
           ],
           "contextWindow": 1000000,
           "maxTokens": 131072,
@@ -88,18 +89,19 @@
           }
         },
         {
-          "id": "glm-5.2",
-          "name": "GLM-5.2",
+          "id": "glm-5.3-flashx",
+          "name": "GLM-5.3-FlashX",
           "reasoning": true,
           "input": [
-            "text"
+            "text",
+            "image"
           ],
           "contextWindow": 1000000,
           "maxTokens": 131072,
           "cost": {
-            "input": 1.18220777,
-            "output": 4.13772721,
-            "cacheRead": 0.29555194,
+            "input": 0.29555194,
+            "output": 1.03443179,
+            "cacheRead": 0.0842323,
             "cacheWrite": 0
           }
         }
@@ -160,7 +162,7 @@
           ],
           "reasoning": true,
           "contextWindow": 1000000,
-          "maxTokens": 65536,
+          "maxTokens": 131072,
           "compat": {
             "thinkingFormat": "qwen",
             "supportsReasoningEffort": false,
@@ -182,7 +184,7 @@
           ],
           "reasoning": true,
           "contextWindow": 1000000,
-          "maxTokens": 65536,
+          "maxTokens": 131072,
           "compat": {
             "thinkingFormat": "qwen",
             "supportsReasoningEffort": false,
@@ -230,12 +232,33 @@
       ]
     },
     "api.xiaomimimo.com/dev": {
-      "baseUrl": "https://api.xiaomimimo.com/v1",
-      "api": "openai-completions",
+      "baseUrl": "https://api.xiaomimimo.com/anthropic",
+      "api": "anthropic-messages",
       "models": [
         {
-          "id": "mimo-v2.5",
-          "name": "MiMo-V2.5",
+          "id": "mimo-v2.6-pro",
+          "name": "MiMo-V2.6-Pro",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek"
+          },
+          "cost": {
+            "input": 0.435,
+            "output": 0.87,
+            "cacheRead": 0.0036,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "mimo-v2.6-flash",
+          "name": "MiMo-V2.6-Flash",
           "reasoning": true,
           "input": [
             "text",
@@ -255,8 +278,8 @@
           }
         },
         {
-          "id": "mimo-v2.5-pro",
-          "name": "MiMo-V2.5-Pro",
+          "id": "mimo-v2.6-pro-ultraspeed",
+          "name": "MiMo-V2.6-Pro-UltraSpeed",
           "reasoning": true,
           "input": [
             "text",
@@ -269,9 +292,9 @@
             "thinkingFormat": "deepseek"
           },
           "cost": {
-            "input": 0.435,
-            "output": 0.87,
-            "cacheRead": 0.0036,
+            "input": 4.35,
+            "output": 8.7,
+            "cacheRead": 0.036,
             "cacheWrite": 0
           }
         }
@@ -316,7 +339,6 @@
         {
           "id": "gpt-6-astra",
           "name": "GPT-6 Astra",
-          "api": "openai-responses",
           "reasoning": true,
           "input": [
             "text",
@@ -344,7 +366,6 @@
         {
           "id": "gpt-5.6-sol",
           "name": "GPT-5.6 Sol",
-          "api": "openai-responses",
           "reasoning": true,
           "input": [
             "text",
@@ -490,32 +511,6 @@
           }
         },
         {
-          "id": "claude-opus-4-8",
-          "name": "Claude Opus 4.8",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 128000,
-          "thinkingLevelMap": {
-            "xhigh": "xhigh",
-            "max": "max"
-          },
-          "compat": {
-            "forceAdaptiveThinking": true,
-            "supportsStrictTools": true,
-            "allowEmptySignature": true
-          },
-          "cost": {
-            "input": 5,
-            "output": 25,
-            "cacheRead": 0.5,
-            "cacheWrite": 6.25
-          }
-        },
-        {
           "id": "claude-sonnet-5",
           "name": "Claude Sonnet 5",
           "reasoning": true,
@@ -550,7 +545,6 @@
         {
           "id": "gpt-6-astra",
           "name": "GPT-6 Astra",
-          "api": "openai-responses",
           "reasoning": true,
           "input": [
             "text",
@@ -578,7 +572,6 @@
         {
           "id": "gpt-5.6-sol",
           "name": "GPT-5.6 Sol",
-          "api": "openai-responses",
           "reasoning": true,
           "input": [
             "text",
@@ -638,6 +631,34 @@
           }
         },
         {
+          "id": "gpt-6-sol",
+          "name": "GPT-6 Sol",
+          "api": "openai-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "compat": {},
+          "cost": {
+            "input": 2,
+            "output": 10,
+            "cacheRead": 0.2,
+            "cacheWrite": 2.5,
+            "tiers": [
+              {
+                "inputTokensAbove": 272000,
+                "input": 4,
+                "output": 15,
+                "cacheRead": 0.4,
+                "cacheWrite": 5
+              }
+            ]
+          }
+        },
+        {
           "id": "gpt-5.6-sol",
           "name": "GPT-5.6 Sol",
           "api": "openai-responses",
@@ -663,6 +684,35 @@
                 "cacheWrite": 10
               }
             ]
+          }
+        }
+      ]
+    },
+    "coding.bagusgo.com/default": {
+      "baseUrl": "https://coding.bagusgo.com",
+      "api": "anthropic-messages",
+      "models": [
+        {
+          "id": "deepseek-flash",
+          "name": "DeepSeek-V4.1-Flash",
+          "thinkingLevelMap": {
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true
+          },
+          "input": [
+            "text",
+            "image"
+          ],
+          "reasoning": true,
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.006,
+            "cacheWrite": 0
           }
         }
       ]
