@@ -1,5 +1,6 @@
 {
   "tuiMode": "fullscreen",
+  "showCacheMissNotices": true,
   "packages": [
     {
       "source": "git:github.com/arrebole/dotagent@pi",

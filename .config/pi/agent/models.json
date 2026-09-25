@@ -72,23 +72,6 @@
           }
         },
         {
-          "id": "glm-5.3-flash",
-          "name": "GLM-5.3-Flash",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "cost": {
-            "input": 0.05911039,
-            "output": 0.20688636,
-            "cacheRead": 0.01699424,
-            "cacheWrite": 0
-          }
-        },
-        {
           "id": "glm-5.3-flashx",
           "name": "GLM-5.3-FlashX",
           "reasoning": true,
@@ -102,6 +85,23 @@
             "input": 0.29555194,
             "output": 1.03443179,
             "cacheRead": 0.0842323,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "cost": {
+            "input": 0.05911039,
+            "output": 0.20688636,
+            "cacheRead": 0.01699424,
             "cacheWrite": 0
           }
         }
@@ -176,28 +176,6 @@
           }
         },
         {
-          "id": "qwen3.8-flash",
-          "name": "Qwen3.8 Flash",
-          "input": [
-            "text",
-            "image"
-          ],
-          "reasoning": true,
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "compat": {
-            "thinkingFormat": "qwen",
-            "supportsReasoningEffort": false,
-            "requiresReasoningContentOnAssistantMessages": true
-          },
-          "cost": {
-            "input": 0.11822078,
-            "output": 0.39899512,
-            "cacheRead": 0.0147776,
-            "cacheWrite": 0.18471996
-          }
-        },
-        {
           "id": "qwen3-coder-next",
           "name": "Qwen3 Coder Next",
           "input": [
@@ -228,6 +206,28 @@
               }
             ]
           }
+        },
+        {
+          "id": "qwen3.8-flash",
+          "name": "Qwen3.8 Flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "reasoning": true,
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "compat": {
+            "thinkingFormat": "qwen",
+            "supportsReasoningEffort": false,
+            "requiresReasoningContentOnAssistantMessages": true
+          },
+          "cost": {
+            "input": 0.11822078,
+            "output": 0.39899512,
+            "cacheRead": 0.0147776,
+            "cacheWrite": 0.18471996
+          }
         }
       ]
     },
@@ -235,6 +235,27 @@
       "baseUrl": "https://api.xiaomimimo.com/anthropic",
       "api": "anthropic-messages",
       "models": [
+        {
+          "id": "mimo-v2.6-pro-ultraspeed",
+          "name": "MiMo-V2.6-Pro-UltraSpeed",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek"
+          },
+          "cost": {
+            "input": 4.35,
+            "output": 8.7,
+            "cacheRead": 0.036,
+            "cacheWrite": 0
+          }
+        },
         {
           "id": "mimo-v2.6-pro",
           "name": "MiMo-V2.6-Pro",
@@ -274,27 +295,6 @@
             "input": 0.14,
             "output": 0.28,
             "cacheRead": 0.0028,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "id": "mimo-v2.6-pro-ultraspeed",
-          "name": "MiMo-V2.6-Pro-UltraSpeed",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek"
-          },
-          "cost": {
-            "input": 4.35,
-            "output": 8.7,
-            "cacheRead": 0.036,
             "cacheWrite": 0
           }
         }
@@ -397,6 +397,33 @@
       "api": "anthropic-messages",
       "models": [
         {
+          "id": "claude-fable-5-1",
+          "name": "Claude Fable 5.1",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "thinkingLevelMap": {
+            "off": null,
+            "xhigh": "xhigh",
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true,
+            "allowEmptySignature": true
+          },
+          "cost": {
+            "input": 10,
+            "output": 50,
+            "cacheRead": 1,
+            "cacheWrite": 12.5
+          }
+        },
+        {
           "id": "claude-fable-5",
           "name": "Claude Fable 5",
           "reasoning": true,
@@ -421,6 +448,33 @@
             "output": 50,
             "cacheRead": 1,
             "cacheWrite": 12.5
+          }
+        },
+        {
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "thinkingLevelMap": {
+            "off": null,
+            "xhigh": "xhigh",
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true,
+            "allowEmptySignature": true
+          },
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cacheRead": 0.5,
+            "cacheWrite": 6.25
           }
         },
         {
@@ -457,8 +511,8 @@
       "api": "anthropic-messages",
       "models": [
         {
-          "id": "claude-fable-5",
-          "name": "Claude Fable 5",
+          "id": "claude-fable-5-1",
+          "name": "Claude Fable 5.1",
           "reasoning": true,
           "input": [
             "text",
@@ -484,8 +538,8 @@
           }
         },
         {
-          "id": "claude-opus-5",
-          "name": "Claude Opus 5",
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
           "reasoning": true,
           "input": [
             "text",
@@ -631,34 +685,6 @@
           }
         },
         {
-          "id": "gpt-6-sol",
-          "name": "GPT-6 Sol",
-          "api": "openai-responses",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 128000,
-          "compat": {},
-          "cost": {
-            "input": 2,
-            "output": 10,
-            "cacheRead": 0.2,
-            "cacheWrite": 2.5,
-            "tiers": [
-              {
-                "inputTokensAbove": 272000,
-                "input": 4,
-                "output": 15,
-                "cacheRead": 0.4,
-                "cacheWrite": 5
-              }
-            ]
-          }
-        },
-        {
           "id": "gpt-5.6-sol",
           "name": "GPT-5.6 Sol",
           "api": "openai-responses",
@@ -682,6 +708,34 @@
                 "output": 30,
                 "cacheRead": 0.8,
                 "cacheWrite": 10
+              }
+            ]
+          }
+        },
+        {
+          "id": "gpt-6-sol",
+          "name": "GPT-6 Sol",
+          "api": "openai-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "compat": {},
+          "cost": {
+            "input": 2,
+            "output": 10,
+            "cacheRead": 0.2,
+            "cacheWrite": 2.5,
+            "tiers": [
+              {
+                "inputTokensAbove": 272000,
+                "input": 4,
+                "output": 15,
+                "cacheRead": 0.4,
+                "cacheWrite": 5
               }
             ]
           }
