@@ -332,8 +332,8 @@
         }
       ]
     },
-    "lucen.plus/codex": {
-      "baseUrl": "https://lucen.plus",
+    "api.tameac.com/codex": {
+      "baseUrl": "https://api.tameac.com/v1",
       "api": "openai-responses",
       "models": [
         {
@@ -392,8 +392,8 @@
         }
       ]
     },
-    "lucen.plus/cc": {
-      "baseUrl": "https://lucen.plus",
+    "api.tameac.com/cc": {
+      "baseUrl": "https://api.tameac.com/v1",
       "api": "anthropic-messages",
       "models": [
         {
