@@ -18,9 +18,14 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 source $XDG_CONFIG_HOME/zsh/fzf.zsh
 source $XDG_CONFIG_HOME/zsh/alias.zsh
-source $XDG_CONFIG_HOME/zsh/proxy.zsh
 source $XDG_CONFIG_HOME/zsh/plugins.zsh
 
-source $XDG_CONFIG_HOME/zsh/theme.zsh
+# Linux 虚拟控制台通常没有 Nerd Font，提示符改用纯 ASCII 字符。
+if [[ $TERM == linux || $TTY == /dev/tty[0-9]* ]]; then
+  source $XDG_CONFIG_HOME/zsh/themes/p10k_tty.zsh
+else
+  source $XDG_CONFIG_HOME/zsh/themes/p10k_tml.zsh
+fi
+
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh

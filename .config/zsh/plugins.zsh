@@ -18,6 +18,9 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 
+# 自定义补全: claude / codex / pi（须在 compinit 之前加入 fpath）
+fpath=("$XDG_CONFIG_HOME/zsh/completions" $fpath)
+
 # 加载补全数据
 ZINIT[ZCOMPDUMP_PATH]="$HOME/.cache/zsh/zcompdump"
 autoload -Uz compinit
