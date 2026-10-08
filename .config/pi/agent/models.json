@@ -332,7 +332,7 @@
         }
       ]
     },
-    "api.tameac.com/codex": {
+    "tameac.com/codex": {
       "baseUrl": "https://api.tameac.com/v1",
       "api": "openai-responses",
       "models": [
@@ -392,7 +392,7 @@
         }
       ]
     },
-    "api.tameac.com/cc": {
+    "tameac.com/cc": {
       "baseUrl": "https://api.tameac.com/v1",
       "api": "anthropic-messages",
       "models": [
@@ -479,8 +479,8 @@
         }
       ]
     },
-    "fastaitoken.com/cc": {
-      "baseUrl": "https://www.fastaitoken.com",
+    "aiportx.com/cc": {
+      "baseUrl": "https://api.aiportx.com/v1",
       "api": "anthropic-messages",
       "models": [
         {
@@ -565,8 +565,8 @@
         }
       ]
     },
-    "fastaitoken.com/codex": {
-      "baseUrl": "https://www.fastaitoken.com",
+    "aiportx.com/codex": {
+      "baseUrl": "https://api.aiportx.com/v1",
       "api": "openai-responses",
       "models": [
         {
