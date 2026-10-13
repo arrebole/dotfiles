@@ -625,22 +625,177 @@
         }
       ]
     },
-    "openai.beststarai.com/codex": {
-      "baseUrl": "https://openai.beststarai.com/v1",
-      "api": "openai-responses",
+    "hz.lifesecretary.com/cc": {
+      "baseUrl": "https://hz.lifesecretary.com:9000",
+      "api": "anthropic-messages",
       "models": [
         {
-          "id": "gpt-6-astra",
-          "name": "GPT-6 Astra",
-          "api": "openai-responses",
+          "id": "claude-fable-5",
+          "name": "Claude Fable 5",
           "reasoning": true,
           "input": [
             "text",
             "image"
           ],
+          "cost": {
+            "input": 10,
+            "output": 50,
+            "cacheRead": 1,
+            "cacheWrite": 12.5
+          },
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "compat": {},
+          "compat": {
+            "supportsMidConvoSystemMessages": true,
+            "supportsMidConvoToolChanges": true,
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true,
+            "allowedFallbackModels": [
+              {
+                "provider": "anthropic",
+                "model": "claude-opus-4-8",
+                "cost": {
+                  "input": 5,
+                  "output": 25,
+                  "cacheRead": 0.5,
+                  "cacheWrite": 6.25
+                }
+              },
+              {
+                "provider": "anthropic",
+                "model": "claude-opus-5",
+                "cost": {
+                  "input": 5,
+                  "output": 25,
+                  "cacheRead": 0.5,
+                  "cacheWrite": 6.25
+                }
+              }
+            ]
+          },
+          "thinkingLevelMap": {
+            "off": null,
+            "xhigh": "xhigh",
+            "max": "max"
+          },
+          "promptCache": {
+            "short": 300,
+            "long": 3600
+          },
+          "inputLimits": {
+            "maxRequestBytes": 33554432,
+            "images": {
+              "maxPerRequest": 600,
+              "resize": {
+                "maxWidth": 2000,
+                "maxHeight": 2000,
+                "maxBytes": 4718592,
+                "jpegQuality": 80
+              }
+            }
+          }
+        },
+        {
+          "id": "claude-opus-5",
+          "name": "Claude Opus 5",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cacheRead": 0.5,
+            "cacheWrite": 6.25
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "compat": {
+            "supportsMidConvoEffort": true,
+            "supportsMidConvoSystemMessages": true,
+            "supportsMidConvoToolChanges": true,
+            "forceAdaptiveThinking": true,
+            "supportsTemperature": false,
+            "supportsStrictTools": true
+          },
+          "thinkingLevelMap": {
+            "off": null,
+            "xhigh": "xhigh",
+            "max": "max"
+          },
+          "promptCache": {
+            "short": 300,
+            "long": 3600
+          },
+          "inputLimits": {
+            "maxRequestBytes": 33554432,
+            "images": {
+              "maxPerRequest": 600,
+              "resize": {
+                "maxWidth": 2000,
+                "maxHeight": 2000,
+                "maxBytes": 4718592,
+                "jpegQuality": 80
+              }
+            }
+          }
+        },
+        {
+          "id": "claude-sonnet-5",
+          "name": "Claude Sonnet 5",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 2,
+            "output": 10,
+            "cacheRead": 0.2,
+            "cacheWrite": 2.5
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsStrictTools": true
+          },
+          "promptCache": {
+            "short": 300,
+            "long": 3600
+          },
+          "inputLimits": {
+            "maxRequestBytes": 33554432,
+            "images": {
+              "maxPerRequest": 600,
+              "resize": {
+                "maxWidth": 2000,
+                "maxHeight": 2000,
+                "maxBytes": 4718592,
+                "jpegQuality": 80
+              }
+            }
+          }
+        }
+      ]
+    },
+    "hz.lifesecretary.com/codex": {
+      "baseUrl": "https://hz.lifesecretary.com:9000",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
           "cost": {
             "input": 10,
             "output": 50,
@@ -655,63 +810,92 @@
                 "cacheWrite": 25
               }
             ]
-          }
-        },
-        {
-          "id": "gpt-6.1-sol",
-          "name": "GPT-6.1 Sol",
-          "api": "openai-responses",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 1000000,
+          },
+          "contextWindow": 272000,
           "maxTokens": 128000,
-          "compat": {},
-          "cost": {
-            "input": 2,
-            "output": 10,
-            "cacheRead": 0.2,
-            "cacheWrite": 2.5,
-            "tiers": [
-              {
-                "inputTokensAbove": 272000,
-                "input": 4,
-                "output": 15,
-                "cacheRead": 0.4,
-                "cacheWrite": 5
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "coding.bagusgo.com/default": {
-      "baseUrl": "https://coding.bagusgo.com",
-      "api": "anthropic-messages",
-      "models": [
-        {
-          "id": "deepseek-flash",
-          "name": "DeepSeek-V4.1-Flash",
           "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "xhigh",
             "max": "max"
           },
           "compat": {
-            "forceAdaptiveThinking": true
+            "supportsStrictMode": true,
+            "supportsOpenAIGrammarTools": true,
+            "supportsAdditionalTools": true,
+            "supportsToolSearch": true,
+            "supportsMidConvoSystemMessages": true,
+            "supportsExplicitPromptCacheMode": true
           },
+          "inputLimits": {
+            "maxRequestBytes": 536870912,
+            "images": {
+              "maxPerRequest": 1500,
+              "resize": {
+                "maxWidth": 2000,
+                "maxHeight": 2000,
+                "maxBytes": 4718592,
+                "jpegQuality": 80
+              }
+            }
+          }
+        },
+        {
+          "id": "gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "reasoning": true,
           "input": [
             "text",
             "image"
           ],
-          "reasoning": true,
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
           "cost": {
-            "input": 0.3,
-            "output": 1.2,
-            "cacheRead": 0.006,
-            "cacheWrite": 0
+            "input": 4,
+            "output": 20,
+            "cacheRead": 0.4,
+            "cacheWrite": 5,
+            "tiers": [
+              {
+                "inputTokensAbove": 272000,
+                "input": 8,
+                "output": 30,
+                "cacheRead": 0.8,
+                "cacheWrite": 10
+              }
+            ]
+          },
+          "contextWindow": 272000,
+          "maxTokens": 128000,
+          "thinkingLevelMap": {
+            "off": "none",
+            "minimal": null,
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "xhigh",
+            "max": "max"
+          },
+          "compat": {
+            "supportsStrictMode": true,
+            "supportsOpenAIGrammarTools": true,
+            "supportsAdditionalTools": true,
+            "supportsToolSearch": true,
+            "supportsMidConvoSystemMessages": true,
+            "supportsExplicitPromptCacheMode": true
+          },
+          "inputLimits": {
+            "maxRequestBytes": 536870912,
+            "images": {
+              "maxPerRequest": 1500,
+              "resize": {
+                "maxWidth": 2000,
+                "maxHeight": 2000,
+                "maxBytes": 4718592,
+                "jpegQuality": 80
+              }
+            }
           }
         }
       ]
