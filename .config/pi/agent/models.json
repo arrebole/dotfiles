@@ -1,6 +1,6 @@
 {
   "providers": {
-    "api.deepseek.com/dev": {
+    "api.deepseek.com/default": {
       "baseUrl": "https://api.deepseek.com/anthropic",
       "api": "anthropic-messages",
       "models": [
@@ -51,7 +51,7 @@
         }
       ]
     },
-    "open.bigmodel.cn/dev": {
+    "open.bigmodel.cn/default": {
       "baseUrl": "https://open.bigmodel.cn/api/anthropic",
       "api": "anthropic-messages",
       "models": [
@@ -107,7 +107,7 @@
         }
       ]
     },
-    "api.moonshot.cn/dev": {
+    "api.moonshot.cn/default": {
       "baseUrl": "https://api.moonshot.cn/v1",
       "api": "openai-completions",
       "models": [
@@ -149,7 +149,7 @@
         }
       ]
     },
-    "dashscope.aliyuncs.com/dev": {
+    "dashscope.aliyuncs.com/default": {
       "api": "openai-completions",
       "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
       "models": [
@@ -231,7 +231,7 @@
         }
       ]
     },
-    "api.xiaomimimo.com/dev": {
+    "api.xiaomimimo.com/default": {
       "baseUrl": "https://api.xiaomimimo.com/anthropic",
       "api": "anthropic-messages",
       "models": [
@@ -300,7 +300,7 @@
         }
       ]
     },
-    "api.minimaxi.com/dev": {
+    "api.minimaxi.com/default": {
       "baseUrl": "https://api.minimaxi.com/anthropic",
       "api": "anthropic-messages",
       "models": [
@@ -896,6 +896,48 @@
                 "jpegQuality": 80
               }
             }
+          }
+        }
+      ]
+    },
+    "pucn.lifesecretary.com/default": {
+      "baseUrl": "https://pucn.lifesecretary.com:9000",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "glm-5.3",
+          "name": "GLM-5.3",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "cost": {
+            "input": 1.18220777,
+            "output": 4.13772721,
+            "cacheRead": 0.29555194,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "deepseek-flash",
+          "name": "DeepSeek-V4.1-Flash",
+          "thinkingLevelMap": {
+            "max": "max"
+          },
+          "input": [
+            "text",
+            "image"
+          ],
+          "reasoning": true,
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.006,
+            "cacheWrite": 0
           }
         }
       ]
