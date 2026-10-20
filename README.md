@@ -19,9 +19,10 @@
 + [tmux](https://github.com/tmux/tmux)
 + [fzf](https://github.com/junegunn/fzf)
 + [eza](https://github.com/eza-community/eza)
-+ [atuin](https://github.com/atuinsh/atuin)
+- [yazi](https://github.com/sxyazi/yazi)
 
 #### AI Codeing
+- [herdr](https://github.com/herdrdev/herdr)
 + [vscode](https://github.com/microsoft/vscode)
 + [claudecode](https://github.com/anthropics/claude-code)
 + [codex](https://github.com/openai/codex)
