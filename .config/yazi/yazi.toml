@@ -1,0 +1,9 @@
+
+[mgr]
+# 显示点开头的隐藏文件
+show_hidden = true
+
+[opener]
+edit = [
+    { run = 'nvim %s', block = true, for = "unix" },
+]
