@@ -332,7 +332,7 @@
         }
       ]
     },
-    "tameac.com/codex": {
+    "api.tameac.com/codex": {
       "baseUrl": "https://api.tameac.com/v1",
       "api": "openai-responses",
       "models": [
@@ -392,7 +392,7 @@
         }
       ]
     },
-    "tameac.com/cc": {
+    "api.tameac.com/cc": {
       "baseUrl": "https://api.tameac.com/v1",
       "api": "anthropic-messages",
       "models": [
@@ -479,7 +479,7 @@
         }
       ]
     },
-    "aiportx.com/cc": {
+    "api.aiportx.com/cc": {
       "baseUrl": "https://api.aiportx.com/v1",
       "api": "anthropic-messages",
       "models": [
@@ -565,7 +565,7 @@
         }
       ]
     },
-    "aiportx.com/codex": {
+    "api.aiportx.com/codex": {
       "baseUrl": "https://api.aiportx.com/v1",
       "api": "openai-responses",
       "models": [
@@ -621,6 +621,35 @@
                 "cacheWrite": 5
               }
             ]
+          }
+        }
+      ]
+    },
+    "api.aiportx.com/cn": {
+      "baseUrl": "https://api.aiportx.com/v1",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "deepseek-v4.1-flash",
+          "name": "DeepSeek-V4.1-Flash",
+          "thinkingLevelMap": {
+            "max": "max"
+          },
+          "compat": {
+            "forceAdaptiveThinking": true
+          },
+          "input": [
+            "text",
+            "image"
+          ],
+          "reasoning": true,
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.006,
+            "cacheWrite": 0
           }
         }
       ]
