@@ -9,3 +9,4 @@ vim.pack.add({
 })
 
 require("neo-tree").setup(require("plugins.neo-tree.config"))
+require("plugins.neo-tree.layout").setup()
