@@ -9,24 +9,30 @@
 }
 ```
 
-### System Components
+### Desktop
 + [sway](https://github.com/swaywm/sway)
 + [waybar](https://github.com/Alexays/Waybar)
 + [alacritty](https://github.com/alacritty/alacritty)
 + [wofi](https://hg.sr.ht/~scoopta/wofi)
-+ [podman](https://github.com/podman-container-tools/podman)
-+ [nvim](https://github.com/neovim/neovim)
-+ [tmux](https://github.com/tmux/tmux)
-+ [fzf](https://github.com/junegunn/fzf)
-+ [eza](https://github.com/eza-community/eza)
-- [yazi](https://github.com/sxyazi/yazi)
 
-#### AI Codeing
-- [herdr](https://github.com/herdrdev/herdr)
-+ [vscode](https://github.com/microsoft/vscode)
+### Shell
++ [zsh](https://github.com/zsh-users/zsh)
++ [fzf](https://github.com/junegunn/fzf)
++ [tmux](https://github.com/tmux/tmux)
++ [yazi](https://github.com/sxyazi/yazi)
++ [eza](https://github.com/eza-community/eza)
+
+### Devtools
++ [podman](https://github.com/podman-container-tools/podman)
++ [dbx](https://github.com/t8y2/dbx)
+
+### Editor
++ [nvim](https://github.com/neovim/neovim)
+    - []
 + [claudecode](https://github.com/anthropics/claude-code)
 + [codex](https://github.com/openai/codex)
 + [pi-agent](https://github.com/earendil-works/pi)
++ [vscode](https://github.com/microsoft/vscode)
++ [herdr](https://github.com/herdrdev/herdr)
 + [codegraph](https://github.com/colbymchenry/codegraph)
-+ [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
-+ [cc-switch](https://github.com/farion1231/cc-switch)
+
