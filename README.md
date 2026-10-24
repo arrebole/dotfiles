@@ -28,7 +28,6 @@
 
 ### Editor
 + [nvim](https://github.com/neovim/neovim)
-    - []
 + [claudecode](https://github.com/anthropics/claude-code)
 + [codex](https://github.com/openai/codex)
 + [pi-agent](https://github.com/earendil-works/pi)

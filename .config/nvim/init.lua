@@ -1,15 +1,10 @@
 
--- ============================================================
--- SECTION 1: OPTIONS
--- Core Neovim settings, leaders, options
--- ============================================================
-require("theme")
+-- 偏好配置
+require("settings")
 
--- ============================================================
--- SECTION 3: PLUGINS
--- ============================================================
+-- 加载插件
 require("plugins/neo-tree/setup")
 require("plugins/smear-cursor/setup")
 
 -- 加载自定义快捷键
-require("keymappings")
+require("keymaps")
