@@ -13,20 +13,6 @@ return {
         and vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1] == ""
       return not unused or #vim.fn.win_findbuf(bufnr) > 0
     end,
-    -- offsets 只适用于分屏；仅有文件树时单独保留左侧标题。
-    custom_areas = {
-      left = function()
-        local windows = vim.tbl_filter(function(win)
-          return vim.api.nvim_win_get_config(win).relative == ""
-        end, vim.api.nvim_tabpage_list_wins(0))
-        if #windows == 1
-          and vim.bo[vim.api.nvim_win_get_buf(windows[1])].filetype == "neo-tree"
-        then
-          return { { text = " File Explorer ", link = "NeoTreeNormal" } }
-        end
-        return {}
-      end,
-    },
     left_mouse_command = function(bufnr)
       require("plugins.bufferline.navigation").open(bufnr)
     end,
@@ -37,13 +23,5 @@ return {
     right_mouse_command = function(bufnr)
       require("plugins.bufferline.navigation").close(bufnr)
     end,
-    offsets = {
-      {
-        filetype = "neo-tree",
-        text = "Explorer",
-        text_align = "center",
-        separator = true,
-      },
-    },
   },
 }

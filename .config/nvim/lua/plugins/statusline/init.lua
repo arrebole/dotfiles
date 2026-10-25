@@ -64,13 +64,6 @@ function M.render()
   local mode, group = mode_label()
   local parts = { "%#LocalStatusMode" .. group .. "# " .. mode .. " %#LocalStatusBase# %<" }
 
-  if bo.filetype == "neo-tree" then
-    local source = vim.b[buf].neo_tree_source == "git_status" and "Git Status" or "File Explorer"
-    parts[#parts + 1] = source .. "  " .. escape(vim.fn.fnamemodify(vim.fn.getcwd(), ":~"))
-    parts[#parts + 1] = "%=%#LocalStatusMuted# neo-tree "
-    return table.concat(parts)
-  end
-
   local name = vim.api.nvim_buf_get_name(buf)
   if name == "" then
     name = "[No Name]"

@@ -1,15 +1,15 @@
 local M = {}
 
--- 从文件树切换 buffer 时，先回到编辑窗口，避免替换文件树。
+-- 点击标签时回到普通编辑窗口，避免替换浮动终端。
 local function focus_editor()
-  if vim.bo.filetype ~= "neo-tree" then
+  if vim.api.nvim_win_get_config(0).relative == "" and (vim.bo.buftype == "" or vim.bo.filetype == "dashboard") then
     return true
   end
 
   local function is_editor(win)
     return vim.api.nvim_win_is_valid(win)
       and vim.api.nvim_win_get_config(win).relative == ""
-      and vim.bo[vim.api.nvim_win_get_buf(win)].buftype == ""
+      and (vim.bo[vim.api.nvim_win_get_buf(win)].buftype == "" or vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "dashboard")
   end
 
   local previous = vim.fn.win_getid(vim.fn.winnr("#"))
@@ -32,10 +32,8 @@ function M.open(bufnr)
   if focus_editor() then
     vim.api.nvim_set_current_buf(bufnr)
   else
-    -- 直接显示目标文件，不先创建空白 buffer。
-    local tree = vim.api.nvim_get_current_win()
-    vim.api.nvim_open_win(bufnr, true, { split = "right", win = tree })
-    vim.api.nvim_win_set_width(tree, require("plugins.neo-tree.config").window.width)
+    vim.cmd("botright new")
+    vim.api.nvim_set_current_buf(bufnr)
   end
 end
 
@@ -83,17 +81,9 @@ function M.close(bufnr)
       -- 先替换窗口里的内容，防止 bdelete 连同窗口一起关闭。
       vim.api.nvim_win_set_buf(win, replacement)
     else
-      -- 最后一个文件关闭后，只保留该 tab 的文件树，不创建空白文件。
-      local tab = vim.api.nvim_win_get_tabpage(win)
-      for _, other in ipairs(vim.api.nvim_tabpage_list_wins(tab)) do
-        if other ~= win
-          and vim.api.nvim_win_get_config(other).relative == ""
-          and vim.bo[vim.api.nvim_win_get_buf(other)].filetype == "neo-tree"
-        then
-          vim.api.nvim_win_close(win, false)
-          break
-        end
-      end
+      -- 最后一个文件关闭后保留编辑窗口，显示空白缓冲区。
+      replacement = vim.api.nvim_create_buf(true, false)
+      vim.api.nvim_win_set_buf(win, replacement)
     end
   end
 

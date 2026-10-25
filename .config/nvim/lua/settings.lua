@@ -1,4 +1,7 @@
 
+-- 在加载插件和快捷键之前设置 leader。
+vim.g.mapleader = " "
+
 -- tab键默认4格子
 -- Tab 字符显示为 4 格
 vim.opt.tabstop = 4      
