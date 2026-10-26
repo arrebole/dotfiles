@@ -3,10 +3,9 @@
   "showCacheMissNotices": true,
   "packages": [
     {
-      "source": "git:github.com/arrebole/dotagent@pi",
+      "source": "git:github.com/arrebole/dotagent",
       "extensions": [
-        "extensions/websearch/index.ts",
-        "extensions/subagent/index.ts"
+        "extensions/websearch/index.ts"
       ],
       "skills": [],
       "prompts": []
