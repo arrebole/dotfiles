@@ -1,19 +1,9 @@
+-- Neovim 配置本体维护在 https://github.com/arrebole/wu.nvim
+-- 这里只负责安装并启动该插件，保持 dotfiles 与配置实现解耦。
+vim.pack.add({
+  {
+    src = "https://github.com/arrebole/wu.nvim",
+  },
+})
 
--- 偏好配置
-require("settings")
-
--- 加载插件
-require("plugins/yazi/setup")
-require("plugins/fzf/setup")
-require("plugins/smear-cursor/setup")
-require("plugins/indentscope/setup")
-require("plugins/bufferline/setup")
-require("plugins/statusline/setup")
-require("plugins/gitsigns/setup")
-require("plugins/lazygit/setup")
-require("plugins/toggleterm/setup")
-require("plugins/noice/setup")
-require("plugins/dashboard/setup")
-
--- 加载自定义快捷键
-require("keymaps")
+require("wu").setup({})
