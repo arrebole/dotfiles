@@ -26,12 +26,15 @@
 + [podman](https://github.com/podman-container-tools/podman)
 + [dbx](https://github.com/t8y2/dbx)
 
-### Editor
+### AI Editor
 + [nvim](https://github.com/neovim/neovim)
 + [claudecode](https://github.com/anthropics/claude-code)
 + [codex](https://github.com/openai/codex)
 + [pi-agent](https://github.com/earendil-works/pi)
 + [vscode](https://github.com/microsoft/vscode)
-+ [herdr](https://github.com/herdrdev/herdr)
-+ [codegraph](https://github.com/colbymchenry/codegraph)
 
+### AI Editor Extends
++ [dotagent](https://github.com/arrebole/dotagent)
++ [herdr](https://github.com/herdrdev/herdr)
++ [magpie](https://github.com/yetone/magpie)
++ [codegraph](https://github.com/colbymchenry/codegraph)
