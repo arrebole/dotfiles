@@ -21,6 +21,7 @@
 + [tmux](https://github.com/tmux/tmux)
 + [yazi](https://github.com/sxyazi/yazi)
 + [eza](https://github.com/eza-community/eza)
++ [windows-terminal](https://github.com/microsoft/terminal)
 
 ### Devtools
 + [podman](https://github.com/podman-container-tools/podman)
@@ -36,5 +37,7 @@
 ### AI Editor Extends
 + [dotagent](https://github.com/arrebole/dotagent)
 + [herdr](https://github.com/herdrdev/herdr)
++ [herdr-core](https://github.com/herdrdev/herdr-core)
++ [herdr-app](https://github.com/herdrdev/herdr-app)
 + [magpie](https://github.com/yetone/magpie)
 + [codegraph](https://github.com/colbymchenry/codegraph)
