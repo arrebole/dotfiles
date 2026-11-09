@@ -40,4 +40,5 @@
 + [herdr-core](https://github.com/herdrdev/herdr-core)
 + [herdr-app](https://github.com/herdrdev/herdr-app)
 + [magpie](https://github.com/yetone/magpie)
++ [playwright-cli](https://github.com/microsoft/playwright-cli)
 + [codegraph](https://github.com/colbymchenry/codegraph)
