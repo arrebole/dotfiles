@@ -321,6 +321,10 @@
           "id": "claude-feble-5.2",
           "name": "claude-feble-5-2",
           "reasoning": true,
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsTemperature": false
+          },
           "thinkingLevelMap": {
             "low": "low",
             "medium": "medium",
@@ -345,6 +349,10 @@
           "id": "claude-opus-5.5",
           "name": "claude-opus-5-5",
           "reasoning": true,
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsTemperature": false
+          },
           "thinkingLevelMap": {
             "low": "low",
             "medium": "medium",
@@ -369,6 +377,10 @@
           "id": "claude-sonnet-5.5",
           "name": "claude-sonnet-5-5",
           "reasoning": true,
+          "compat": {
+            "forceAdaptiveThinking": true,
+            "supportsTemperature": false
+          },
           "thinkingLevelMap": {
             "low": "low",
             "medium": "medium",
