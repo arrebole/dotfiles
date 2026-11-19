@@ -1,7 +1,7 @@
 {
   "tuiMode": "fullscreen",
   "showCacheMissNotices": true,
-  "defaultTools": ["+codemode"],
+  "defaultTools": ["+codemode","+tool_search"],
   "packages": [
     {
       "source": "git:github.com/arrebole/dotagent",
